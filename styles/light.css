@@ -9,16 +9,34 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --bg-color: #ff8dcb;
+  --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
   --font-color: #353430;
   --maintitle-font-color: #ffc2e6;
   --filltitle-font-color: #353430;
   --filltitle-bg-color: #ff8dcb;
   --sectiontitle-font-color: #353430;
+  --border-hover-color: rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .header__logo {
   display: none;
   /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+   
+    --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
+    --font-color: #353430;
+    --maintitle-font-color: #ffc2e6;
+    --filltitle-font-color: #353430;
+    --filltitle-bg-color: #ff8dcb;
+    --sectiontitle-font-color: #353430;
+    --border-hover-color: rgba(50, 49, 45, 0.4);
+  }
+.theme-auto .header__logo {
+  display: none;
+}
 }
