@@ -2,13 +2,12 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  width: 100vw;
+
   font-family: "IBM Plex mono", monospace;
   font-size: 18px;
   background-color: var(--bg-color);
   color: var(--font-color);
   font-weight: 400;
-  padding: 10px 10px 0 10px;
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
@@ -19,9 +18,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  padding-block-end: 10px;
-  block-size: calc(100vh - 10px);
-  min-block-size: 648px;
+  padding: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .decorated-zone {
@@ -39,8 +38,8 @@
 .header__logo {
   position: absolute;
   display: flex;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   gap: 2px;
   text-transform: uppercase;
   line-height: 139%;
@@ -59,6 +58,8 @@
 
 .decorated-zone::before {
   position: absolute;
+  right: 10px;
+  top: 10px;
   content: "";
   display: block;
   justify-self: end;
@@ -78,6 +79,7 @@
   border-inline-start: 1px solid var(--sectiontitle-font-color);
   align-self: end;
   bottom: 10px;
+  left: 10px;
 }
 
 .header__theme-menu {
@@ -150,8 +152,10 @@
 }
 
 .main {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
   margin-block-start: 40px;
-  margin-block-end: 50px;
+  margin-block-end: 40px;
   line-height: 130%;
   display: grid;
   gap: 50px;
@@ -208,11 +212,11 @@
 
 .footer {
   display: grid;
-  block-size: calc(100vh - 10px);
-  min-block-size: 648px;
+  block-size: 100vh;
+  min-block-size: 668px;
   align-content: center;
   justify-content: center;
-  padding-block-end: 10px;
+  padding: 10px;
 }
 
 .footer .theme-title {
@@ -220,15 +224,12 @@
 }
 
 @media (width >=768px) {
-  .page {
-    min-inline-size: 768px;
-    padding: 20px 20px 0 20px;
-  }
+
   .header {
     grid-template-columns: 1fr 1fr;
-    padding-block-end: 20px;
-    block-size: calc(100vh - 20px);
-    min-block-size: 984px;
+    padding: 20px;
+    block-size: 100vh;
+    min-block-size: 1024px;
   }
 
   .header__theme-menu {
@@ -242,8 +243,18 @@
     margin-inline-start: -20px;
   }
 
+  .header__logo {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::before {
+    right: 20px;
+    top: 20px;
+  }
   .decorated-zone::after {
     bottom: 20px;
+    left: 20px;
   }
 
   .theme-title {
@@ -256,8 +267,10 @@
   }
 
   .main {
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
     margin-block-start: 60px;
-    margin-block-end: 80px;
+    margin-block-end: 60px;
     gap: 80px;
   }
   .main__why {
@@ -321,15 +334,15 @@
   }
 
   .footer {
-    padding-block-end: 20px;
-    block-size: calc(100vh - 20px);
-    min-block-size: 984px;
+    padding: 20px;
+    block-size: 100vh;
+    min-block-size: 1024px;
   }
 }
 
 @media (width >=1024px) {
   .header {
-    min-block-size: 728px;
+    min-block-size: 768px;
   }
   .header__theme-menu {
    
@@ -375,7 +388,7 @@
   }
 
   .footer {
-    min-block-size: 728px;
+    min-block-size: 768px;
   }
 
   .footer .theme-title {
